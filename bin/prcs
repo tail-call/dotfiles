@@ -1,0 +1,2 @@
+#!/bin/bash
+ps -eo rss,pid,c,comm | sort -n

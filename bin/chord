@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo `randarg A B C D E F G``randarg '#' ''``randarg 'm' ''`

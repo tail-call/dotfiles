@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for i in {1..6}; do
+	feh $1 -Zz -D 8.5 -g400x300 -B black &
+	sleep 1
+done

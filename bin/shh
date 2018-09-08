@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+file=~/docs/SECRET.gpg
+temp="/dev/shm/sec$$"
+
+echo -n "Passphrase: "
+read -s pass
+# Passing password through fd so it's not visible to /bin/ps
+echo "$pass" | gpg --batch --passphrase-fd 0 --decrypt "$file" > "$temp"
+[[ $? == 0 ]] &&  $EDITOR "$temp" || exit 1
+echo "$pass" | gpg --batch --passphrase-fd 0 --symmetric < "$temp" > "$file"
+unlink ${temp}

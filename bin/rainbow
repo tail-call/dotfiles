@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for i in {30..49}; do
+	echo "[${i}m Color $i"
+done

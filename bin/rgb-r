@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+
+# Strips green and blue components in an RGB byte stream.
+# (i.e. splits input in groups 3 bytes each and preserves
+# first byte only)
+
+import sys
+
+while True:
+    rgb = sys.stdin.buffer.read(3)
+
+    if not rgb:
+        break
+
+    sys.stdout.buffer.write(bytes([rgb[0]]))

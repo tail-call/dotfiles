@@ -1,0 +1,5 @@
+EDITOR=nvim
+export EDITOR
+
+PATH=~/bin:$PATH
+export PATH

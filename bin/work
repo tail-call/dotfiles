@@ -1,0 +1,7 @@
+#!/bin/sh
+
+for minutes in 25 5 25 5 25 5 25; do
+#for minutes in 25 5 25; do
+    pomo $minutes
+done
+zenity --info --text="4 pomodoros complete. Have a 30-minutes break."

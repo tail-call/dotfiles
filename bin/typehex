@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Type strings like 000FFABCD2 or whatever to get a binary file
+
+echo -ne `sed -e 's/\([0-9a-f][0-9a-f]\)/\\\\x\1/g; s/[ \n\t]//g'`

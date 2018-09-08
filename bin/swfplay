@@ -1,0 +1,41 @@
+#!/bin/bash
+
+browser=firefox
+#browser=chromium-browser
+
+if [[ -z $1 ]]; then
+cat << EOF
+$0 - a wrapper for playing SWF files in a browser.
+It creates a temp web page with a given file embedded.
+
+USAGE:
+  $0 <file.swf> - open a flash file in $browser
+  $0 - show this message
+EOF
+exit 0
+fi
+
+# Create file with .html suffix
+output=$(mktemp --suffix=.html)
+
+swf=$1
+
+# Store first arg as a filename with full path
+swf=$(pwd)/$1
+
+
+cat << EOF > $output
+<html>
+<head>
+	<title>$swf</title>
+</head>
+<body>
+	<object type="application/x-shockwave-flash" data="file://$swf"
+		width="100%" height="100%">
+	<p>Can't open $swf.</p>
+	</object>
+</body>
+</html>
+EOF
+
+$browser $output &> /dev/null &

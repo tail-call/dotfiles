@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+{ tr 0123456789ABCDEFabcdef FEDCBA9876543210543210; } <<< "$*"

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Search for duplicate files in current directory.
+# May take some time.
+
+# Also it is buggy if files have weird names.
+
+for file in $(find . -type f)
+do
+	size=$(du -b "$file" | cut -f 1)
+	overrides="${storage["$size"]}"
+	if [[ -n "$overrides" ]]
+	then
+		echo "$file: possible duplicate of $overrides"
+	fi
+	storage["$size"]="$file"
+done

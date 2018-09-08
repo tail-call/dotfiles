@@ -1,0 +1,6 @@
+include "%L"
+<Multi_key> <period> <backslash>       	: "λ"   U03BB # GREEK SMALL LETTER LAMBDA
+<Multi_key> <period> <slash>     	: "♪"   U266A # EIGHTH NOTE
+<Multi_key> <o> <k>     	: "✓"   U2713 # CHECK MARK
+<Multi_key> <n> <o> <k>     	: "✗"   U2717 # BALLOT X
+<Multi_key> <r> <b>     	: "!(https://vk.com/images/emoji/D83CDF08.png)"   U2717 # BALLOT X

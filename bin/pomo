@@ -1,0 +1,35 @@
+#!/bin/bash
+# Pomodoro clock with zenity notifications
+
+program="$0"
+minutes="$1"
+
+function display_help ()
+{
+    echo "USAGE: $program <minutes>"
+    exit 1
+}
+
+function display_finished ()
+{
+    echo -n "Finished at: "
+    date -R
+    zenity --question --title="pomo" \
+           --text "Timer finished: $minutes minutes passed." \
+           --ok-label="Close" \
+           --cancel-label="Restart"
+    case "$?" in
+        0) exit 0 ;;
+        1) "$program" "$minutes" & ;;
+    esac
+}
+
+if [[ -n "$minutes" ]]
+then
+    echo "Started $minutes minutes timer!.."
+    echo -n "Started at: "
+    date -R
+    sleep $((minutes * 60)) && display_finished
+else
+    display_help
+fi

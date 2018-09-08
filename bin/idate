@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+# Prints a ISO 8601-ish date and time.
+
+date '+%Y-%m-%dT%T'

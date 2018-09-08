@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cat -- "$*" | sed -e 's/x/кс/g; s/q/кв/g; s/ce/це/g; s/ci/ци/g; s/sh/ш/g; s/ch/ч/g; y/abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/абкдефгхижклмнопцрстуввхизАБКДЕФГХИЖКЛМНОПЦРСТУВВХИЗ/'

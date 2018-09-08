@@ -1,0 +1,9 @@
+setleds -D +num
+
+source /etc/profile
+
+PATH=$PATH:~/bin
+
+export GTK_IM_MODULE="xim"
+
+export TERMINAL=termite

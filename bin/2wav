@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+sox -r 44100 -e unsigned -b 8 -c 1 "$1" "$1.wav"

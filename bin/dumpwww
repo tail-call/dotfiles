@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+function usage ()
+{
+    echo -e "Usage:\n  dumpwww <url>"
+}
+
+if [[ -z "$1" ]]; then
+    usage
+    exit 1
+fi
+
+echo "Source: $1"
+echo -n "Date: "
+date -R
+echo # Newline
+LANG=en_US.UTF-8 lynx -dump "$1"

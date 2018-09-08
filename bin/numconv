@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Try numconv 32 535342
+
+scm -c "(display (number->string $2 $1))(newline)"

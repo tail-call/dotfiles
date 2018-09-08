@@ -1,0 +1,7 @@
+#!/bin/bash
+
+temp=/tmp/fileswap
+
+mv $1 $temp
+mv $2 $1
+mv $temp $2

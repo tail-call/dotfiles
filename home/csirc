@@ -1,0 +1,51 @@
+(require 'srfi-1)
+
+(define (puts . things)
+  (for-each display things)
+  (newline))
+
+(define (either . stuff)
+  (if (null? stuff)
+      '()
+      (list-ref stuff
+		(random (length stuff)))))
+
+(define (str . items)
+  (with-output-to-string
+    (lambda ()
+      (for-each display items))))
+
+(define-syntax thunk
+  (syntax-rules ()
+    ((thunk body ...)
+     (lambda () body ...))))
+
+(define-syntax define-macro
+  (syntax-rules ()
+    ((define-macro (name . param) body ...)
+     (define-syntax name
+       (er-macro-transformer
+	 (lambda (exp rename compare)
+	   (apply (lambda param body ...)
+		  (cdr exp))))))))
+
+(define-syntax define*
+  (syntax-rules ()
+    ((define* symbol value)
+     (define symbol value))
+    ((define* symbol1 value1 symbol2 value2 ...)
+     (begin
+       (define symbol1 value1)
+       (define* symbol2 value2 ...)))))
+
+(define (interpose separator items)
+  (if (or (null? items) (single? items))
+      items
+      (cons* (car items)
+	     separator
+	     (interpose separator (cdr items)))))
+
+(define-syntax λ
+  (syntax-rules ()
+    ((λ . forms)
+     (lambda . forms))))
