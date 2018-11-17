@@ -4,7 +4,7 @@
 # symlinking.
 
 function abspath() {
-    readlink -m "$1"
+    [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
 }
 
 function abslink() {
