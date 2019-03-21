@@ -60,6 +60,7 @@ alias quit=exit
 alias gc='git commit -m'
 alias ga='git add'
 alias gs='git status'
+alias prune='git remote update origin --prune'
 
 function cd! ()
 {
