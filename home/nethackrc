@@ -2,7 +2,7 @@
 # System-wide NetHack configuration file for console-only NetHack.
 #
 
-OPTIONS=windowtype:tty,toptenwin,hilite_pet,number_pad:1,DECgraphics
+OPTIONS=windowtype:tty,toptenwin,hilite_pet,number_pad:0,DECgraphics
 OPTIONS=fixinv,safe_pet,sortpack,tombstone,color,autodig,!autopickup
 OPTIONS=verbose,news,fruit:babboora,boulder:8,legacy,msg_window:f
 OPTIONS=dogname:Fido

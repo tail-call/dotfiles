@@ -8,4 +8,6 @@ setfattr -n user.anything -v "value" file #Set attribute "anything" of file to "
 tc qdisc add dev wlp3s0 root tbf rate 1024kbit latency 50ms burst 1540 #Limit network speed on wlp3s0
 xxd -rp #Convert hexadecimal stream to binary stream, ignore garbage
 zip file.zip -r * #Zip all files in current directory and write them to file.zip
+git tag -a v.0.0.x -m 'Release 0.0.x' #Create tag at current commit
+git push --tags #Push local tags to origin
 EOF
