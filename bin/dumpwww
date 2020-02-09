@@ -14,4 +14,4 @@ echo "Source: $1"
 echo -n "Date: "
 date -R
 echo # Newline
-LANG=en_US.UTF-8 lynx -dump "$1"
+LANG=en_US.UTF-8 lynx -assume_charset UTF-8 -display_charset UTF-8 -dump "$1"
