@@ -2,7 +2,7 @@
 
 *Anton Istomin <anton@tail-call.ru>*
 
-These are dotfiles that I use on my Linux machines. Feel free to study
+These are dotfiles that I use on my Unix machines. Feel free to study
 them, modify them, reuse their parts or use them in full.
 
 Some of them weren't used for quite a while, so be careful. For
