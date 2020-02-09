@@ -1,5 +1,11 @@
 #!/bin/bash
 
-for i in {30..49}; do
-	echo "[${i}m Color $i"
+word="$1"
+
+for i in {30..36} {40..46}; do
+    if [[ -n $word ]]; then
+        echo "[${i}m $word [${30}m"
+    else
+        echo "[${i}m Color $i [${30}m"
+    fi
 done
