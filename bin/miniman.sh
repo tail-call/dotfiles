@@ -10,4 +10,8 @@ xxd -rp #Convert hexadecimal stream to binary stream, ignore garbage
 zip file.zip -r * #Zip all files in current directory and write them to file.zip
 git tag -a v.0.0.x -m 'Release 0.0.x' #Create tag at current commit
 git push --tags #Push local tags to origin
+git clean -fd --tags #Delete uncommited directories
+git clean -fX --tags #Delete uncommited files
+git merge -X ours other-branch (or theirs) #Merge resolving conflicts in favor of current branch (or other branch)
+git merge -s ours other-branch (or theirs) #Merge ignoring changes in other branch (or current branch)
 EOF
