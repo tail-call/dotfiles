@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Taken from <https://gist.github.com/frace/4156720>
+
+if (( $# == 1 )); then
+    declare proc="$(ps axc | grep "$1")"
+    read -ra pid <<< "$proc"
+
+    if  (( $pid )); then
+        echo $pid
+        exit 0
+    else
+        exit 1
+    fi
+else
+    echo "Usage: $0 <processname>"
+    exit 1
+fi

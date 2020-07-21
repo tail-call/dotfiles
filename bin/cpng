@@ -33,7 +33,7 @@ if [[ -z "$out" ]]; then
 fi
 
 # WC counts bytes, CUT leaves only the byte count field.
-size=$(wc -c "$file" | cut -f1 -d' ')
+size=$(gwc -c "$file" | cut -f1 -d' ')
 
 if [[ -z "$width" ]]; then
   # One could show that square image with this width is
@@ -44,7 +44,7 @@ fi
 
 # Appends a PPM header to file, making its contents the raw pixel data.
 # Then converts to PNG.
-cat - "$file" << EOF | pnm2png > $out
+cat - "$file" "$file" << EOF | pnmtopng > $out
 P6
 $width $width
 255

@@ -108,7 +108,8 @@ set wildmenu
 " The %a macro is ignored.  To use a % you must put %%.
 
 " Image
-filetype *.jpg,*.png,*.jpeg,*.bmp,*.xpm,*.xbm,*.bpg,*.ppm,*.pnm,*.pgm,*.pbm,*.pam feh -B black --start-at ./%f . 2>/dev/null&,eog,mtpaint
+" filetype *.jpg,*.png,*.jpeg,*.bmp,*.xpm,*.xbm,*.bpg,*.ppm,*.pnm,*.pgm,*.pbm,*.pam feh -B black --start-at ./%f . 2>/dev/null&,eog,mtpaint
+filetype *.jpg,*.png,*.jpeg,*.bmp,*.xpm,*.xbm,*.bpg,*.ppm,*.pnm,*.pgm,*.pbm,*.pam open %f 2>/dev/null&,eog,mtpaint
 
 " GIMP image
 filetype *.xcf gimp

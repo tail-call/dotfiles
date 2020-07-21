@@ -8,17 +8,17 @@ EOF
 exit 1
 fi
 
-tempdir=$(mktemp -d)
+tempdir=temp
 
-#unzip -e "$file" -d "$tempdir"
+unzip -e "$file" -d "$tempdir"
 
-#(for file in $tempdir/*.png
-(for file in *.png
+(for file in $tempdir/*.png
+#(for file in *.png
  do
      >&2 echo Converting $file.
-     png2pnm $file | tail -n+4
- done) | tar -xzf -
-# done) | tar -xf -
+     pngtopnm $file | tail -n+4
+# done) | tar -xzf -
+ done) | tar -xf -
 # done) > out.gpg
 
 >&2 echo Cleaning up...
