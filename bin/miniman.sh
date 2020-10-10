@@ -22,4 +22,7 @@ git ls-files --error-unmatch <file> #Check if file is version controlled (will e
 pod repo update #Update pods repository
 pkgutil --expand <source.pkg> <dest.dir> #Unpack .pkg file (macOS only)
 pkgutil --expand-full <source.pkg> <dest.dir> #Unpack .pkg file including a Payload file (use if --expand fails)
+img2pdf 04.jpg --imgsize 26.46cm > 04.pdf #Convert image to PDF with specified size
+qpdf --empty --pages 01.pdf 1 02.pdf 1  -- out.pdf #Create PDF from specific pages of specific PDFs
+qpdf bottom.pdf --overlay top.pdf -- overlaid.pdf #Overlay one PDF over another
 EOF
