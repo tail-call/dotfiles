@@ -7,14 +7,14 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-files=($*)
+files=($@)
 
 dir=$(mktemp -d)
 dest=$(pwd)
 
 for file in "${files[@]}"; do 
     echo "Converting $file..."
-    img2pdf "$file" --pagesize 210mm > "$dir/$file.pdf"
+    img2pdf "$file" --pagesize 210mm > "$dir/${file##*/}.pdf"
 done
 
 function make_qpdf_params() {

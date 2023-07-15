@@ -6,7 +6,8 @@ autoload -U colors && colors
 
 # Set up the prompt
 #PROMPT="     %?%{$fg[yellow]%}[%h]%{$reset_color%} %c%{$fg[magenta]%}λ%{$reset_color%} "
-PROMPT="%?	%c%{$fg[magenta]%}λ%{$reset_color%} "
+#PROMPT="%?	%c%{$fg[magenta]%}λ%{$reset_color%} "
+PROMPT="%?	%c%{$fg[magenta]%}🦎%{$reset_color%} "
 #RPROMPT="<"
 
 # Use emacs keybindings even if our EDITOR is set to vi
@@ -21,7 +22,7 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 export EDITOR=nvim
-export ICLOUD="/Users/user/Library/Mobile Documents/com~apple~CloudDocs"
+export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
 # Use modern completion system
 autoload -Uz compinit && compinit
@@ -31,7 +32,7 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(gdircolors -b)"
+#eval "$(gdircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -62,6 +63,7 @@ alias gc='git commit -m'
 alias ga='git add'
 alias gs='git status'
 alias prune='git remote update origin --prune'
+alias vs="open -a 'Visual Studio Code'"
 
 function cd! ()
 {
@@ -81,5 +83,6 @@ PERL5LIB="/home/razarusu/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5
 PERL_LOCAL_LIB_ROOT="/home/razarusu/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/razarusu/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/razarusu/perl5"; export PERL_MM_OPT;
-export PATH="/usr/local/opt/node@14/bin:$PATH"
+#export PATH="/usr/local/opt/node@10/bin:$PATH"
 export PATH="$HOME/.npm-packages/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"

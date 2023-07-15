@@ -12,7 +12,7 @@ tempdir=temp
 
 unzip -e "$file" -d "$tempdir"
 
-(for file in $tempdir/*.png
+(for file in $tempdir/P.TAR.PNG/*.png
 #(for file in *.png
  do
      >&2 echo Converting $file.

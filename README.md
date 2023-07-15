@@ -1,6 +1,6 @@
 # dotfiles
 
-*Anton Istomin <anton@tail-call.ru>*
+*Maria Zaitseva <maria@tail-call.ru>*
 
 These are dotfiles that I use on my Unix machines. Feel free to study
 them, modify them, reuse their parts or use them in full.

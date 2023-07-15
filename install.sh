@@ -38,3 +38,5 @@ abslink xinitrc ~/.xinitrc
 abslink xinputrc ~/.xinputrc
 abslink zshenv ~/.zshenv
 abslink zshrc ~/.zshrc
+
+abslink 'home/dosbox/dosbox-0.74.conf' ~/Library/Preferences/DOSBox\ 0.74-3-3\ Preferences

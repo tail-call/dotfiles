@@ -19,10 +19,13 @@ git clean -fX --tags #Delete uncommited files
 git merge -X ours other-branch (or theirs) #Merge resolving conflicts in favor of current branch (or other branch)
 git merge -s ours other-branch (or theirs) #Merge ignoring changes in other branch (or current branch)
 git ls-files --error-unmatch <file> #Check if file is version controlled (will exit with 1 if file is not tracked)
+git archive --format=zip HEAD -o source.zip #Creates a zip from current branch
 pod repo update #Update pods repository
 pkgutil --expand <source.pkg> <dest.dir> #Unpack .pkg file (macOS only)
 pkgutil --expand-full <source.pkg> <dest.dir> #Unpack .pkg file including a Payload file (use if --expand fails)
 img2pdf 04.jpg --imgsize 26.46cm > 04.pdf #Convert image to PDF with specified size
 qpdf --empty --pages 01.pdf 1 02.pdf 1  -- out.pdf #Create PDF from specific pages of specific PDFs
 qpdf bottom.pdf --overlay top.pdf -- overlaid.pdf #Overlay one PDF over another
+unzip -l file.zip #List files in a zip 
+nslookup example.com#Get IP address of a remote host
 EOF
