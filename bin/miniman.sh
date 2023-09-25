@@ -20,6 +20,7 @@ git merge -X ours other-branch (or theirs) #Merge resolving conflicts in favor o
 git merge -s ours other-branch (or theirs) #Merge ignoring changes in other branch (or current branch)
 git ls-files --error-unmatch <file> #Check if file is version controlled (will exit with 1 if file is not tracked)
 git archive --format=zip HEAD -o source.zip #Creates a zip from current branch
+git shortlog --summary --numbered --email #Lists all authors in a repo
 pod repo update #Update pods repository
 pkgutil --expand <source.pkg> <dest.dir> #Unpack .pkg file (macOS only)
 pkgutil --expand-full <source.pkg> <dest.dir> #Unpack .pkg file including a Payload file (use if --expand fails)
