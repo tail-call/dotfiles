@@ -23,6 +23,7 @@ abslink config/milkytracker ~/.config
 abslink config/nvim ~/.config
 abslink config/termite ~/.config
 abslink config/user-dirs.dirs ~/.config
+abslink config/kitty ~/.config
 
 abslink dosbox ~/.dosbox
 abslink vifm ~/.vifm
