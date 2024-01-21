@@ -7,7 +7,8 @@ autoload -U colors && colors
 # Set up the prompt
 #PROMPT="     %?%{$fg[yellow]%}[%h]%{$reset_color%} %c%{$fg[magenta]%}λ%{$reset_color%} "
 #PROMPT="%?	%c%{$fg[magenta]%}λ%{$reset_color%} "
-PROMPT="%?	%c%{$fg[magenta]%}🦎%{$reset_color%} "
+#PROMPT="%?	%c%{$fg[magenta]%}🦎%{$reset_color%} "
+PROMPT="%?	%c%{$fg[magenta]%}🐾%{$reset_color%} "
 #RPROMPT="<"
 
 # Use emacs keybindings even if our EDITOR is set to vi
@@ -86,3 +87,6 @@ PERL_MM_OPT="INSTALL_BASE=/home/razarusu/perl5"; export PERL_MM_OPT;
 #export PATH="/usr/local/opt/node@10/bin:$PATH"
 export PATH="$HOME/.npm-packages/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# Print cool motd
+miniman.sh --motd

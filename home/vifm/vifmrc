@@ -109,13 +109,15 @@ set wildmenu
 
 " Image
 " filetype *.jpg,*.png,*.jpeg,*.bmp,*.xpm,*.xbm,*.bpg,*.ppm,*.pnm,*.pgm,*.pbm,*.pam feh -B black --start-at ./%f . 2>/dev/null&,eog,mtpaint
-filetype *.jpg,*.png,*.jpeg,*.bmp,*.xpm,*.xbm,*.bpg,*.ppm,*.pnm,*.pgm,*.pbm,*.pam open %f 2>/dev/null&,eog,mtpaint
+" filetype *.jpg,*.png,*.jpeg,*.bmp,*.xpm,*.xbm,*.bpg,*.ppm,*.pnm,*.pgm,*.pbm,*.pam open %f 2>/dev/null&,eog,mtpaint
+" filetype *.jpg,*.png,*.jpeg,*.bmp,*.xpm,*.xbm,*.bpg,*.ppm,*.pnm,*.pgm,*.pbm,*.pam catimg %f && echo -n "Viewing %f. Press ENTER to finish" && read
+filetype *.jpg,*.png,*.jpeg,*.bmp,*.xpm,*.xbm,*.bpg,*.ppm,*.pnm,*.pgm,*.pbm,*.pam,*.gif kitten icat %f && echo -n "Viewing %f. Press ENTER to finish" && read
 
 " GIMP image
 filetype *.xcf gimp
 
 " Gif special case
-filetype *.gif gifview -aU %f
+" filetype *.gif gifview -aU %f
 
 " Audio
 filetype *.mp3,*.m4a,*.mid,*.xm,*.it,*.mod,*.s3m,*.sid,*.nsf,*.wav,*.ogg,*.wma,*.pls,*.gbs,*.m3u,*.3gpp audacious
