@@ -32,6 +32,9 @@ qpdf bottom.pdf --overlay top.pdf -- overlaid.pdf #Overlay one PDF over another
 unzip -l file.zip #List files in a zip 
 nslookup example.com#Get IP address of a remote host
 nm -gU <YourFramework>.framework/<YourFramework>#List all public symbols of a .framework
+git diff branch1..branch2 #Compare branch1 and branch2
+git diff branch1..branch2 --name-only #Compare branch1 and branch2, only show file names
+git log branch1..branch2 #Compare commits between branches
 EOF
 }
 
