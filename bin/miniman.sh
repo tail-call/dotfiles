@@ -35,6 +35,7 @@ nm -gU <YourFramework>.framework/<YourFramework>#List all public symbols of a .f
 git diff branch1..branch2 #Compare branch1 and branch2
 git diff branch1..branch2 --name-only #Compare branch1 and branch2, only show file names
 git log branch1..branch2 #Compare commits between branches
+sh -x script.sh #Echo all executed lines in a script, useful when scripts fail mysteriously
 EOF
 }
 

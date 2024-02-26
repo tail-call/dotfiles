@@ -65,6 +65,8 @@ alias ga='git add'
 alias gs='git status'
 alias prune='git remote update origin --prune'
 alias vs="open -a 'Visual Studio Code'"
+alias l="ls -GF"
+alias R="source ~/.zshrc"
 
 function cd! ()
 {
@@ -85,8 +87,21 @@ PERL_LOCAL_LIB_ROOT="/home/razarusu/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LI
 PERL_MB_OPT="--install_base \"/home/razarusu/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/razarusu/perl5"; export PERL_MM_OPT;
 #export PATH="/usr/local/opt/node@10/bin:$PATH"
+
+export PATH="/usr/local/Cellar/node@10/10.21.0/bin:$PATH"
 export PATH="$HOME/.npm-packages/bin:$PATH"
+export PATH="$HOME/Library/Python/3.11/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Print cool motd
 miniman.sh --motd
+
+function g() {
+  case "$1" in
+    -h) declare -f g ;;
+    1) cd ~/Developer/code.novotelecom/personal-account-ios ;;
+    2) cd ~/Developer/code.mine ;;
+    *) echo "Try -h" ;;
+  esac
+}
+
