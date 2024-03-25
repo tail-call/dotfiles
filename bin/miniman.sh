@@ -40,7 +40,7 @@ EOF
 }
 
 if [ "$1" == "--motd" ]; then
-    echo "Did you know?"
+    echo -e "\nDid you know?"
 
     database | shuf -n 1 | awk -F '#' '{
         # Trim leading and trailing spaces from $1
@@ -56,7 +56,7 @@ if [ "$1" == "--motd" ]; then
         no_color="\033[0m";
 
         # Print the formatted output with $1 in blue
-        printf("You can use \"%s%s%s\" to %s.\n", blue, $1, no_color, $2);
+        printf("You can use \"%s%s%s\" to %s.\n\n", blue, $1, no_color, $2);
     }'
 
 else

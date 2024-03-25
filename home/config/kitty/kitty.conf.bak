@@ -1,16 +1,47 @@
 # vim:fileencoding=utf-8:foldmethod=marker
-# Use zo to open, zc to close
 
-#: Fonts {{{
+######################################
+#                                    #
+# HELP                               #
+#                                    #
+# Use zo to open, zc to close        #
+#                                    #
+# For all settings, search for ^[^#] #
+#                                    #
+######################################
+
+# Sets the style of the tab bar. 'fade' makes the inactive tabs less prominent.
+tab_bar_style fade
+
+# Treats the Option key as Alt key in macOS, enabling the use of Alt-based shortcuts.
+macos_option_as_alt yes
+
+# Binds the Command+N shortcut to open a new Kitty window with the current working directory.
+map cmd+n new_os_window_with_cwd
+
+# Binds the Command+T shortcut to open a new tab in Kitty with the current working directory.
+map cmd+t new_tab_with_cwd
+
+map cmd+enter       new_window_with_cwd
+map cmd+w close_tab
+
+# Sets the default layout of windows within a tab to be vertical. New windows split the screen vertically.
+layout vertical
+
+enabled_layouts tall:bias=50;full_size=1;mirrored=false
 
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-# font_family      monospace
+font_family      OCR A Extended
 # bold_font        auto
 # italic_font      auto
 # bold_italic_font auto
+
+
+
+#: Fonts {{{
 
 #: You can specify different fonts for the bold/italic/bold-italic
 #: variants. To get a full list of supported fonts use the `kitty
@@ -927,8 +958,6 @@
 #: The second number is the margin between the tab bar and the
 #: contents of the current tab.
 
-tab_bar_style fade
-
 #: The tab bar style, can be one of:
 
 #: fade
@@ -1551,8 +1580,6 @@ tab_bar_style fade
 #: background_opacity. If you want to use both, you are probably
 #: better off just hiding the titlebar with hide_window_decorations.
 
-macos_option_as_alt yes
-
 #: Use the Option key as an Alt key on macOS. With this set to no,
 #: kitty will use the macOS native Option+Key to enter Unicode
 #: character behavior. This will break any Alt+Key keyboard shortcuts
@@ -1921,6 +1948,7 @@ macos_option_as_alt yes
 
 # map kitty_mod+n new_os_window
 # map cmd+n       new_os_window
+#
 
 #::  Works like new_window above, except that it opens a top-level OS
 #::  window. In particular you can use new_os_window_with_cwd to open
@@ -2040,7 +2068,6 @@ macos_option_as_alt yes
 #: New tab
 
 # map kitty_mod+t new_tab
-# map cmd+t       new_tab
 
 #: Close tab
 
@@ -2404,6 +2431,6 @@ macos_option_as_alt yes
 
 
 # BEGIN_KITTY_THEME
-# Tomorrow
+# Goa Base
 include current-theme.conf
 # END_KITTY_THEME

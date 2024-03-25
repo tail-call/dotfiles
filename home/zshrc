@@ -1,32 +1,17 @@
 # Init the prompt
 autoload -Uz promptinit && promptinit
-
 # Enable colors
 autoload -U colors && colors
-
-# Set up the prompt
-#PROMPT="     %?%{$fg[yellow]%}[%h]%{$reset_color%} %c%{$fg[magenta]%}λ%{$reset_color%} "
-#PROMPT="%?	%c%{$fg[magenta]%}λ%{$reset_color%} "
-#PROMPT="%?	%c%{$fg[magenta]%}🦎%{$reset_color%} "
-PROMPT="%?	%c%{$fg[magenta]%}🐾%{$reset_color%} "
-#RPROMPT="<"
+# Use modern completion system
+autoload -Uz compinit && compinit
+# zsh programmable renamer
+autoload -U zmv
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
 # History settings
 setopt histignorealldups sharehistory
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=~/.zsh_history
-
-export EDITOR=nvim
-export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
-
-# Use modern completion system
-autoload -Uz compinit && compinit
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -49,16 +34,28 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # Autocomplete with menu interface
 setopt menucomplete
 zstyle ':completion:*' menu select=1 _complete _ignored _approximate
-
-# WOW ZSH PROGRAMMABLE RENAMER WOW
-autoload -U zmv
-
 #PS1='     $?\[\e[0;33m\][\!]\[\e[0m\] \W\[\e[0;35m\]\$\[\e[0m\] '
 #PS1='     $?\[\e[0;33m\][\!]\[\e[0m\] \W\[\e[0;35m\]λ\[\e[0m\] '
 
 # source /etc/zsh_command_not_found
 
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
+# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
+
+# Set up the prompt
+#PROMPT="     %?%{$fg[yellow]%}[%h]%{$reset_color%} %c%{$fg[magenta]%}λ%{$reset_color%} "
+#PROMPT="%?	%c%{$fg[magenta]%}λ%{$reset_color%} "
+#PROMPT="%?	%c%{$fg[magenta]%}🦎%{$reset_color%} "
+#PROMPT="%?	%c%{$fg[magenta]%}🐾%{$reset_color%} "
+PROMPT="%?	%c%{$fg[magenta]%}λ%{$reset_color%} "
+#RPROMPT="<"
+
+## ALIASES
+
 alias quit=exit
 alias gc='git commit -m'
 alias ga='git add'
@@ -68,12 +65,32 @@ alias vs="open -a 'Visual Studio Code'"
 alias l="ls -GF"
 alias R="source ~/.zshrc"
 
-function cd! ()
-{
+## FUNCTIONS
+
+function g() {
+  case "$1" in
+    1) cd ~/Developer/code.novotelecom/personal-account-ios ;;
+    2) cd ~/Developer/code.mine ;;
+    3) cd ~/Study/leetcode.com/problems/minimum-size-subarray-sum/ ;;
+    *) declare -f g ;;
+  esac
+}
+
+function cd! () {
     if [[ ! -e "$1" ]]; then
         mkdir -p "$1" && cd "$1"
     else
         cd "$1"
+    fi
+}
+
+unalias run-help 2> /dev/null
+run-help() {
+    man $1 > /dev/null 2>&1
+    if [[ $? == 0 ]]; then
+        man $1 | awk '/^SYNOPSIS$/,0'
+    else
+        echo "🦄💀"
     fi
 }
 
@@ -86,22 +103,22 @@ PERL5LIB="/home/razarusu/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5
 PERL_LOCAL_LIB_ROOT="/home/razarusu/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/razarusu/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/razarusu/perl5"; export PERL_MM_OPT;
-#export PATH="/usr/local/opt/node@10/bin:$PATH"
 
+#export PATH="/usr/local/opt/node@10/bin:$PATH"
 export PATH="/usr/local/Cellar/node@10/10.21.0/bin:$PATH"
 export PATH="$HOME/.npm-packages/bin:$PATH"
 export PATH="$HOME/Library/Python/3.11/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
+export EDITOR=nvim
+export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+
+## GREETING
+
+echo # newline
+echo "Type alias -L to review your aliases."
+echo "Type g to list locations."
+
 # Print cool motd
 miniman.sh --motd
-
-function g() {
-  case "$1" in
-    -h) declare -f g ;;
-    1) cd ~/Developer/code.novotelecom/personal-account-ios ;;
-    2) cd ~/Developer/code.mine ;;
-    *) echo "Try -h" ;;
-  esac
-}
 
